@@ -28,18 +28,14 @@ function alphabeticShift(inputString: string): string {
     "z",
   ];
 
-  let index = 0;
-  let newString = "";
+  let arrayString = inputString.split("");
 
-  for (let i of inputString.split("")) {
-    if (i !== "z") {
-      index = alphabet.indexOf(i) + 1;
-    }
+  for (let i = 0; i < arrayString.length; i++) {
+    let indexShifted = arrayString[i] && alphabet.indexOf(arrayString[i]) + 1;
 
-    newString += alphabet[index];
+    arrayString[i] = alphabet[indexShifted];
   }
-
-  return newString;
+  return arrayString.join("");
 }
 
 console.log(alphabeticShift("crazy"));

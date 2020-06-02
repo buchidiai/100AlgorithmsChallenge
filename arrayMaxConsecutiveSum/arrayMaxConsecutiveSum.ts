@@ -14,6 +14,8 @@ function arrayMaxConsecutiveSum(inputArray: number[], k: number): number {
       max = sum;
     }
   }
+
+  return max;
 }
 
 console.log(arrayMaxConsecutiveSum([2, 3, 5, 1, 6], 2));

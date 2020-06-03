@@ -11,5 +11,13 @@ function centuryFromYear(year: number): number {
   return end >= 1 ? start + 1 : start;
 }
 
+function centuryFromYear2(year: number): number {
+  const century = year / 100;
+
+  return year % 100 === 0 ? century : century + 1;
+}
+
 console.log(centuryFromYear(1500));
 console.log(centuryFromYear(1700));
+
+console.log(centuryFromYear2(1700));

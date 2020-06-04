@@ -12,5 +12,17 @@ function chunkyMonkey(arr: any[], size: number): any[][] {
   return newArray;
 }
 
-// console.log(chunkyMonkey(["a", "b", "c", "d"], 2));
+function chunkyMonkey1(array, size) {
+  let chunked = [];
+  let index = 0;
+
+  while (index < array.length) {
+    chunked.push(array.slice(index, (index += size)));
+  }
+
+  return chunked;
+}
+
+console.log(chunkyMonkey(["a", "b", "c", "d"], 2));
 console.log(chunkyMonkey([0, 1, 2, 3, 4, 5], 4));
+console.log(chunkyMonkey1([0, 1, 2, 3, 4, 5], 4));

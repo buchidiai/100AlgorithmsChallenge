@@ -1,17 +1,18 @@
 function chessBoardCellColor(cell1: string, cell2: string): boolean {
   const board = {
-    a: 1,
-    b: 2,
-    c: 3,
-    d: 4,
-    e: 5,
-    f: 6,
-    g: 7,
-    h: 8,
+    A: 1,
+    B: 2,
+    C: 3,
+    D: 4,
+    E: 5,
+    F: 6,
+    G: 7,
+    H: 8,
   };
 
   const total1 = (board[cell1[0]] + parseInt(cell1[1])) % 2;
   const total2 = (board[cell2[0]] + parseInt(cell2[1])) % 2;
+  console.log(total1, total2);
 
   return total1 === total2;
 }

@@ -1,6 +1,17 @@
 function findEmailDomain(address: string): string {
+  let string = address.split("@");
+  console.log(string);
 
+  for (let i = 0; i < string.length; i++) {
+    return string[string.length - 1];
+  }
 }
 
-console.log(findEmailDomain('prettyandsimple@example.com'));
-console.log(findEmailDomain('<>[]:,;@\"!#$%&*+-/=?^_{}| ~.a\"@example.org'));
+function findEmailDomain1(address: string): string {
+  const lastAtIndex = address.lastIndexOf("@");
+
+  return address.slice(lastAtIndex + 1, address.length);
+}
+
+console.log(findEmailDomain("prettyandsimple@example.com"));
+console.log(findEmailDomain1('<>[]:,;@"!#$%&*+-/=?^_{}| ~.a"@example.org'));

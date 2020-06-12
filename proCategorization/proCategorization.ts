@@ -2,8 +2,7 @@ function proCategorization(
   pros: string[],
   preferences: string[][]
 ): string[][][] {
-
-      let prosPreferences = {};
+  let prosPreferences = {};
   let proPrefs = [];
 
   for (let i = 0; i < pros.length; i++) {
@@ -17,29 +16,27 @@ function proCategorization(
   }
 
   for (const prop in prosPreferences) {
-    proPrefs.push([[prop], [...prosPreferences[prop]]);
+    proPrefs.push([[prop], [...prosPreferences[prop]]]);
   }
 
   proPrefs = proPrefs.sort((pref1, pref2) => {
     const pref1Lower = pref1[0][0].toLowerCase();
     const pref2Lower = pref2[0][0].toLowerCase();
 
-    if(pref1Lower > pref2Lower) {
+    if (pref1Lower > pref2Lower) {
       return 1;
     }
 
-    if(pref1Lower < pref2Lower) {
-      return -1
+    if (pref1Lower < pref2Lower) {
+      return -1;
     }
 
-    return 0
-  })
+    return 0;
+  });
 
-  console.log(proPrefs)
+  console.log(proPrefs);
 
   return proPrefs;
-
-
 }
 
 console.log(
